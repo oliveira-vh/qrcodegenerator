@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/vue.min.js"></script>
+    <script src="js/qrious.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>QRCode Generator</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>QR Code Generator</h1>
+        <div>
+            <input type="text" size="25"
+                    placeholder="Type to generate..."
+                    v-model="text">
+            
+        </div>
+
+        <div v-if="text" class="output">
+            <img :src="newQRCode" alt="QRCode">
+            <div>
+                <a class="btn" :href="newQRCode" download>Download QR Code</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                text: '',
+                qrcode: new QRious({ size: 300 })
+            },
+            computed: {
+                newQRCode() {
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
