@@ -36,13 +36,12 @@ input {
 	display:inline-block;
 	cursor:pointer;
 	color:#666666;
-	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-  text-shadow:0px 1px 0px #ffffff;
-  margin-top: 1em;
+	text-shadow:0px 1px 0px #ffffff;
+	margin-top: 1em;
 }
 .btn:hover {
 	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
